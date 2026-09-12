@@ -2,6 +2,7 @@ use std::sync::Arc;
 use std::sync::atomic::{AtomicBool, Ordering} ;
 use std::{hint, thread} ;
 
+// Структура для spinlock
 struct Spinlock {
     lock_flag: AtomicBool
 }
@@ -30,6 +31,7 @@ impl Spinlock {
     }
 }
 
+// Счётчик
 struct Shared (
     std::cell::UnsafeCell<i32>,
 ) ;
