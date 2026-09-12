@@ -36,9 +36,7 @@ struct Shared (
     std::cell::UnsafeCell<i32>,
 ) ;
 
-//unsafe impl Send for Shared {}  // реализация Send для Shared
 unsafe impl Sync for Shared {}  // реализация Sync для Shared
-
 
 fn main() {
     let counter = Arc::new(
